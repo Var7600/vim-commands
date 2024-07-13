@@ -7,7 +7,10 @@ function! vim_commands_plugin#openCheatSheet()
 			let l:cheat_sheet = l:user_cheat_sheet
 	else
 		"  plugin directory path
-		let l:cheat_sheet = expand("<sfile>:h:h") . "/vim-commands/doc/vim-commands.md"
+		let l:cheat_sheet = "$HOME/.vim/plugged/vim-commands/doc/vim-commands.md"
+		if !filereadable(l:cheat_sheet)
+			let l:cheat_sheet = "$HOME/.vim/bundle/vim-commands/doc/vim-commands.md"
+		endif
 	endif
 
 	" Open the markdown file in a new buffer
