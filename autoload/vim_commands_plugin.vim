@@ -7,12 +7,12 @@ function! vim_commands_plugin#openCheatSheet()
 			let l:cheat_sheet = l:user_cheat_sheet
 	else
 		"  plugin directory path
-		let l:file_path = "$HOME/.vim/plugged/vim-commands/doc/vim-commands.md"
+		let l:file_path = expand('$HOME/.vim/plugged/vim-commands/doc/vim-commands.md')
 
 		if filereadable(l:file_path)
 				let l:cheat_sheet = l:file_path
 		else
-			let l:cheat_sheet = "$HOME/.vim/bundle/vim-commands/doc/vim-commands.md"
+			let l:cheat_sheet = expand('$HOME/.vim/bundle/vim-commands/doc/vim-commands.md')
 		
 		endif
 
