@@ -6,10 +6,8 @@ function! vim_commands_plugin#openCheatSheet()
 	if filereadable(l:user_cheat_sheet)
 			let l:cheat_sheet = l:user_cheat_sheet
 	else
-		" get the plugin directory path
-		let l:plugin_dir = expand('<sfile>:p:h:h')
-		" Construct the path to the cheat sheet
-		let l:cheat_sheet = l:plugin_dir . '/doc/vim-commands.md'
+		"  plugin directory path
+		let l:cheat_sheet = '$HOME/.vim/plugged/vim-commands/doc/vim-commands.md'
 	endif
 
 	" Open the markdown file in a new buffer
